@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "Term.h"
+#import "iBigTextAppDelegate.h"
 
 @protocol iBigTextSettingsDelegate;
 
@@ -16,10 +17,11 @@
 	IBOutlet UITableView* termTableView;
 	
 	NSMutableArray* terms;
+	NSManagedObjectContext* context;
 }
 @property(nonatomic, assign) id <iBigTextSettingsDelegate> delegate;
 -(IBAction)save;
--(IBAction)edit;
+-(IBAction)done;
 
 @end
 

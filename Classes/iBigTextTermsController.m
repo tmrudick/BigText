@@ -27,10 +27,24 @@
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
     [super viewDidLoad];
-	terms = [[NSMutableArray alloc] init];
-	[terms addObject:@"Hello."];
-	[terms addObject:@"Ready to go?"];
-	[terms addObject:@"Dinner tonight?"];
+	
+	context = [(iBigTextAppDelegate *)[[UIApplication sharedApplication] delegate] managedObjectContext];
+	
+	NSFetchRequest *request = [[NSFetchRequest alloc] init];
+	NSEntityDescription *entity = [NSEntityDescription entityForName:@"Term" inManagedObjectContext:context];
+	[request setEntity:entity];
+	
+	NSLog(@"Fetching...");
+	NSError *error;
+	terms = [[context executeFetchRequest:request error:&error] mutableCopy];
+
+	if (terms == nil) {
+		NSLog(@"We got nothing.");
+	}else{
+		NSLog(@"We got something...");
+	}
+	
+	[termTableView reloadData];
 }
 
 // Override to allow orientations other than the default portrait orientation.
@@ -57,11 +71,22 @@
 }
 
 -(IBAction)save {
-// save here
+	if ([terms indexOfObject:[delegate getBigText]] != NSNotFound)
+		return;
+	
+	Term *term = (Term *)[NSEntityDescription insertNewObjectForEntityForName:@"Term" inManagedObjectContext:context];
+
+	[term setTitle:[delegate getBigText]];
+	NSError *error;
+	if (![context save:&error]) {
+		NSLog(@"Error");
+	}
+	[terms addObject:term];
+	[delegate updateBigText:[delegate getBigText]];
 }
 
--(IBAction)edit {
-	[termTableView setEditing:YES animated:YES];
+-(IBAction)done {
+	[delegate updateBigText:[delegate getBigText]];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -77,14 +102,34 @@
 	}
 	
 	// Set up the cell...
-	NSString *cellValue = [terms objectAtIndex:indexPath.row];
+	NSString *cellValue = [[terms objectAtIndex:indexPath.row] title];
 	[cell.textLabel setText:cellValue];
 	
 	return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-	[delegate updateBigText:[terms objectAtIndex:indexPath.row]];
+	[delegate updateBigText:[[terms objectAtIndex:indexPath.row] title]];
+}
+
+-(void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+	// If row is deleted, remove it from the list.
+	if (editingStyle == UITableViewCellEditingStyleDelete)
+	{		
+		// Delete the managed object at the given index path.
+        NSManagedObject* term = [terms objectAtIndex:indexPath.row];
+        [context deleteObject:term];
+		
+        // Update the array and table view.
+        [terms removeObjectAtIndex:indexPath.row];
+        [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:YES];
+		
+        // Commit the change.
+        NSError *error;
+        if (![context save:&error]) {
+            // Handle the error.
+        }
+	}
 }
 
 @end

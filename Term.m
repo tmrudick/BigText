@@ -13,4 +13,7 @@
 
 @dynamic title;
 
+-(NSString*)getTitle {
+	return self.title;
+}
 @end

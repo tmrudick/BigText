@@ -11,12 +11,23 @@
 @class iBigTextViewController;
 
 @interface iBigTextAppDelegate : NSObject <UIApplicationDelegate> {
-    UIWindow *window;
-    iBigTextViewController *viewController;
-}
+
+    NSManagedObjectModel *managedObjectModel;
+    NSManagedObjectContext *managedObjectContext;	    
+    NSPersistentStoreCoordinator *persistentStoreCoordinator;
+	
+	UIWindow *window;
+    iBigTextViewController *viewController;	
+}	
 
 @property (nonatomic, retain) IBOutlet UIWindow *window;
 @property (nonatomic, retain) IBOutlet iBigTextViewController *viewController;
+
+@property (nonatomic, retain, readonly) NSManagedObjectModel *managedObjectModel;
+@property (nonatomic, retain, readonly) NSManagedObjectContext *managedObjectContext;
+@property (nonatomic, retain, readonly) NSPersistentStoreCoordinator *persistentStoreCoordinator;
+
+- (NSString *)applicationDocumentsDirectory;
 
 @end
 

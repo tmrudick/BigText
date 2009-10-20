@@ -12,7 +12,7 @@
 		</object>
 		<object class="NSMutableArray" key="IBDocument.EditedObjectIDs">
 			<bool key="EncodedWithXMLCoder">YES</bool>
-			<integer value="7"/>
+			<integer value="1"/>
 		</object>
 		<object class="NSArray" key="IBDocument.PluginDependencies">
 			<bool key="EncodedWithXMLCoder">YES</bool>
@@ -71,13 +71,13 @@
 						<int key="IBUIBarStyle">1</int>
 						<object class="NSMutableArray" key="IBUIItems">
 							<bool key="EncodedWithXMLCoder">YES</bool>
+							<object class="IBUIBarButtonItem" id="802894681">
+								<int key="IBUIStyle">1</int>
+								<reference key="IBUIToolbar" ref="839348427"/>
+								<int key="IBUISystemItemIdentifier">0</int>
+							</object>
 							<object class="IBUIBarButtonItem" id="145170684">
 								<string key="IBUITitle">Save Current BigText</string>
-								<int key="IBUIStyle">2</int>
-								<reference key="IBUIToolbar" ref="839348427"/>
-							</object>
-							<object class="IBUIBarButtonItem" id="802894681">
-								<string key="IBUITitle">Edit</string>
 								<int key="IBUIStyle">1</int>
 								<reference key="IBUIToolbar" ref="839348427"/>
 							</object>
@@ -134,11 +134,11 @@
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchEventConnection" key="connection">
-						<string key="label">edit</string>
+						<string key="label">done</string>
 						<reference key="source" ref="802894681"/>
 						<reference key="destination" ref="372490531"/>
 					</object>
-					<int key="connectionID">20</int>
+					<int key="connectionID">21</int>
 				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -181,8 +181,8 @@
 						<reference key="object" ref="839348427"/>
 						<object class="NSMutableArray" key="children">
 							<bool key="EncodedWithXMLCoder">YES</bool>
-							<reference ref="145170684"/>
 							<reference ref="802894681"/>
+							<reference ref="145170684"/>
 						</object>
 						<reference key="parent" ref="191373211"/>
 					</object>
@@ -239,7 +239,7 @@
 				</object>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">20</int>
+			<int key="maxID">21</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -251,7 +251,7 @@
 						<bool key="EncodedWithXMLCoder">YES</bool>
 						<object class="NSArray" key="dict.sortedKeys">
 							<bool key="EncodedWithXMLCoder">YES</bool>
-							<string>edit</string>
+							<string>done</string>
 							<string>save</string>
 						</object>
 						<object class="NSMutableArray" key="dict.values">

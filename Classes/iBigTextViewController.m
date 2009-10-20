@@ -32,7 +32,7 @@
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
     [super viewDidLoad];
-	bigText = [NSString stringWithString:@"Big Text. Little Phrases."];
+	bigText = [NSString stringWithString:@"Big Text. Little Phrases."];//@"Big Text. Little Phrases."];
 	bigTextLabel.text = bigText;
 	textField.text = bigText;
 }
@@ -57,11 +57,14 @@
 }
 
 -(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent*)event {
-	[self showSettings];
-	return;
-	textField.hidden = NO;
-	bigTextLabel.hidden = YES;
-	[textField becomeFirstResponder];
+	NSSet *allTouches = [event allTouches];
+    if ([allTouches count] == 2) {
+		[self showSettings];
+	}else{
+		textField.hidden = NO;
+		bigTextLabel.hidden = YES;
+		[textField becomeFirstResponder];
+	}
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)field {
@@ -103,8 +106,6 @@
 		}
 		fontSize -= 2;
 	}
-	
-	
 }
 
 -(void)updateBigText:(NSString *)newText {
