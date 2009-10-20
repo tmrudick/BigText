@@ -13,12 +13,13 @@
 
 @interface iBigTextTermsController : UIViewController {
 	id <iBigTextSettingsDelegate> delegate;
-	IBOutlet UITableView* commonList;
+	IBOutlet UITableView* termTableView;
 	
 	NSMutableArray* terms;
 }
 @property(nonatomic, assign) id <iBigTextSettingsDelegate> delegate;
 -(IBAction)save;
+-(IBAction)edit;
 
 @end
 

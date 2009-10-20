@@ -19,6 +19,8 @@
 		E7562C03108D239800E60CC5 /* iBigTextTermsController.m in Sources */ = {isa = PBXBuildFile; fileRef = E7562C01108D239800E60CC5 /* iBigTextTermsController.m */; };
 		E7562C04108D239800E60CC5 /* iBigTextTermsController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7562C02108D239800E60CC5 /* iBigTextTermsController.xib */; };
 		E7562CB6108D365000E60CC5 /* Terms.xcdatamodel in Sources */ = {isa = PBXBuildFile; fileRef = E7562CB5108D365000E60CC5 /* Terms.xcdatamodel */; };
+		E7562D8D108D586F00E60CC5 /* Term.m in Sources */ = {isa = PBXBuildFile; fileRef = E7562D8C108D586F00E60CC5 /* Term.m */; };
+		E7562D92108D588A00E60CC5 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7562D91108D588A00E60CC5 /* CoreData.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +42,9 @@
 		E7562C01108D239800E60CC5 /* iBigTextTermsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iBigTextTermsController.m; sourceTree = "<group>"; };
 		E7562C02108D239800E60CC5 /* iBigTextTermsController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = iBigTextTermsController.xib; path = Classes/iBigTextTermsController.xib; sourceTree = "<group>"; };
 		E7562CB5108D365000E60CC5 /* Terms.xcdatamodel */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = wrapper.xcdatamodel; path = Terms.xcdatamodel; sourceTree = "<group>"; };
+		E7562D8B108D586F00E60CC5 /* Term.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Term.h; sourceTree = "<group>"; };
+		E7562D8C108D586F00E60CC5 /* Term.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Term.m; sourceTree = "<group>"; };
+		E7562D91108D588A00E60CC5 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,6 +55,7 @@
 				1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */,
 				1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */,
 				288765A50DF7441C002DB57D /* CoreGraphics.framework in Frameworks */,
+				E7562D92108D588A00E60CC5 /* CoreData.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -101,6 +107,8 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				E7562D8B108D586F00E60CC5 /* Term.h */,
+				E7562D8C108D586F00E60CC5 /* Term.m */,
 				E7562CB5108D365000E60CC5 /* Terms.xcdatamodel */,
 				E7562C02108D239800E60CC5 /* iBigTextTermsController.xib */,
 				E7562B48108C12A900E60CC5 /* bg.png */,
@@ -117,6 +125,7 @@
 				1DF5F4DF0D08C38300B7A737 /* UIKit.framework */,
 				1D30AB110D05D00D00671497 /* Foundation.framework */,
 				288765A40DF7441C002DB57D /* CoreGraphics.framework */,
+				E7562D91108D588A00E60CC5 /* CoreData.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -182,6 +191,7 @@
 				28D7ACF80DDB3853001CB0EB /* iBigTextViewController.m in Sources */,
 				E7562C03108D239800E60CC5 /* iBigTextTermsController.m in Sources */,
 				E7562CB6108D365000E60CC5 /* Terms.xcdatamodel in Sources */,
+				E7562D8D108D586F00E60CC5 /* Term.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

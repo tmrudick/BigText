@@ -60,6 +60,10 @@
 // save here
 }
 
+-(IBAction)edit {
+	[termTableView setEditing:YES animated:YES];
+}
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 	return terms.count;
 }
