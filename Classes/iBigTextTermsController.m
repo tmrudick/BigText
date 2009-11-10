@@ -34,17 +34,11 @@
 	NSEntityDescription *entity = [NSEntityDescription entityForName:@"Term" inManagedObjectContext:context];
 	[request setEntity:entity];
 	
-	NSLog(@"Fetching...");
 	NSError *error;
 	terms = [[context executeFetchRequest:request error:&error] mutableCopy];
-
-	if (terms == nil) {
-		NSLog(@"We got nothing.");
-	}else{
-		NSLog(@"We got something...");
-	}
 	
 	[termTableView reloadData];
+	[request release];
 }
 
 // Override to allow orientations other than the default portrait orientation.
@@ -67,6 +61,7 @@
 
 
 - (void)dealloc {
+	[terms release];
     [super dealloc];
 }
 
@@ -79,7 +74,7 @@
 	[term setTitle:[delegate getBigText]];
 	NSError *error;
 	if (![context save:&error]) {
-		NSLog(@"Error");
+		NSLog(@"Error Saving New Term");
 	}
 	[terms addObject:term];
 	[delegate updateBigText:[delegate getBigText]];

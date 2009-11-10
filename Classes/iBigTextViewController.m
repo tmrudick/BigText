@@ -32,7 +32,7 @@
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
     [super viewDidLoad];
-	bigText = [NSString stringWithString:@"Big Text. Little Phrases."];//@"Big Text. Little Phrases."];
+	bigText = [NSString stringWithString:@"Little Phrases. Big Text."];
 	bigTextLabel.text = bigText;
 	textField.text = bigText;
 }
