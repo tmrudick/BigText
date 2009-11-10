@@ -1,9 +1,9 @@
 //
 //  iBigTextTermsController.h
-//  iBigText
+//  BigText
 //
 //  Created by Tom Rudick on 10/19/09.
-//  Copyright 2009 __MyCompanyName__. All rights reserved.
+//  Copyright Tom Rudick 2009. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>

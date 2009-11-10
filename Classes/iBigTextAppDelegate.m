@@ -1,9 +1,9 @@
 //
 //  iBigTextAppDelegate.m
-//  iBigText
+//  BigText
 //
 //  Created by Tom Rudick on 10/18/09.
-//  Copyright __MyCompanyName__ 2009. All rights reserved.
+//  Copyright Tom Rudick 2009. All rights reserved.
 //
 
 #import "iBigTextAppDelegate.h"

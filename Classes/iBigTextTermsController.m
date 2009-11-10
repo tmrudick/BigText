@@ -1,9 +1,9 @@
 //
 //  iBigTextTermsController.m
-//  iBigText
+//  BigText
 //
 //  Created by Tom Rudick on 10/19/09.
-//  Copyright 2009 __MyCompanyName__. All rights reserved.
+//  Copyright Tom Rudick 2009. All rights reserved.
 //
 
 #import "iBigTextTermsController.h"
@@ -12,17 +12,6 @@
 @implementation iBigTextTermsController
 
 @synthesize delegate;
-
-/*
- // The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
-    if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) {
-        // Custom initialization
-    }
-    return self;
-}
-*/
-
 
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
@@ -43,22 +32,12 @@
 
 // Override to allow orientations other than the default portrait orientation.
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
-    // Return YES for supported orientations
     return (interfaceOrientation == UIInterfaceOrientationLandscapeRight);
 }
 
 - (void)didReceiveMemoryWarning {
-	// Releases the view if it doesn't have a superview.
     [super didReceiveMemoryWarning];
-	
-	// Release any cached data, images, etc that aren't in use.
 }
-
-- (void)viewDidUnload {
-	// Release any retained subviews of the main view.
-	// e.g. self.myOutlet = nil;
-}
-
 
 - (void)dealloc {
 	[terms release];
@@ -122,7 +101,7 @@
         // Commit the change.
         NSError *error;
         if (![context save:&error]) {
-            // Handle the error.
+			NSLog(@"Error Saving Term.");
         }
 	}
 }
