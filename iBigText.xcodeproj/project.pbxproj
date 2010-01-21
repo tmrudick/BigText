@@ -16,6 +16,11 @@
 		28AD733F0D9D9553002E5188 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD733E0D9D9553002E5188 /* MainWindow.xib */; };
 		28D7ACF80DDB3853001CB0EB /* iBigTextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28D7ACF70DDB3853001CB0EB /* iBigTextViewController.m */; };
 		E7045C39108E9ACE00EA41E9 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = E7045C38108E9ACE00EA41E9 /* icon.png */; };
+		E730564C10A922A400A3037E /* icon.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E730564810A922A400A3037E /* icon.jpg */; };
+		E730564D10A922A400A3037E /* image_large.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E730564910A922A400A3037E /* image_large.jpg */; };
+		E730564E10A922A400A3037E /* PriSS.png in Resources */ = {isa = PBXBuildFile; fileRef = E730564A10A922A400A3037E /* PriSS.png */; };
+		E730564F10A922A400A3037E /* terms.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = E730564B10A922A400A3037E /* terms.sqlite */; };
+		E73A7D5A11057419001FBDB7 /* Entitlements.plist in Resources */ = {isa = PBXBuildFile; fileRef = E73A7D5911057419001FBDB7 /* Entitlements.plist */; };
 		E7562B49108C12A900E60CC5 /* bg.png in Resources */ = {isa = PBXBuildFile; fileRef = E7562B48108C12A900E60CC5 /* bg.png */; };
 		E7562C03108D239800E60CC5 /* iBigTextTermsController.m in Sources */ = {isa = PBXBuildFile; fileRef = E7562C01108D239800E60CC5 /* iBigTextTermsController.m */; };
 		E7562C04108D239800E60CC5 /* iBigTextTermsController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7562C02108D239800E60CC5 /* iBigTextTermsController.xib */; };
@@ -39,6 +44,11 @@
 		32CA4F630368D1EE00C91783 /* iBigText_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iBigText_Prefix.pch; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* iBigText-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "iBigText-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 		E7045C38108E9ACE00EA41E9 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
+		E730564810A922A400A3037E /* icon.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = icon.jpg; sourceTree = "<group>"; };
+		E730564910A922A400A3037E /* image_large.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = image_large.jpg; sourceTree = "<group>"; };
+		E730564A10A922A400A3037E /* PriSS.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PriSS.png; sourceTree = "<group>"; };
+		E730564B10A922A400A3037E /* terms.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = terms.sqlite; sourceTree = "<group>"; };
+		E73A7D5911057419001FBDB7 /* Entitlements.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Entitlements.plist; sourceTree = "<group>"; };
 		E7562B48108C12A900E60CC5 /* bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg.png; sourceTree = "<group>"; };
 		E7562C00108D239800E60CC5 /* iBigTextTermsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iBigTextTermsController.h; sourceTree = "<group>"; };
 		E7562C01108D239800E60CC5 /* iBigTextTermsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iBigTextTermsController.m; sourceTree = "<group>"; };
@@ -88,6 +98,7 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				E73A7D5911057419001FBDB7 /* Entitlements.plist */,
 				080E96DDFE201D6D7F000001 /* Classes */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
 				29B97317FDCFA39411CA2CEA /* Resources */,
@@ -109,8 +120,12 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				E730564810A922A400A3037E /* icon.jpg */,
+				E730564910A922A400A3037E /* image_large.jpg */,
+				E730564A10A922A400A3037E /* PriSS.png */,
 				E7045C38108E9ACE00EA41E9 /* icon.png */,
 				E7562D8B108D586F00E60CC5 /* Term.h */,
+				E730564B10A922A400A3037E /* terms.sqlite */,
 				E7562D8C108D586F00E60CC5 /* Term.m */,
 				E7562CB5108D365000E60CC5 /* Terms.xcdatamodel */,
 				E7562C02108D239800E60CC5 /* iBigTextTermsController.xib */,
@@ -180,6 +195,11 @@
 				E7562B49108C12A900E60CC5 /* bg.png in Resources */,
 				E7562C04108D239800E60CC5 /* iBigTextTermsController.xib in Resources */,
 				E7045C39108E9ACE00EA41E9 /* icon.png in Resources */,
+				E730564C10A922A400A3037E /* icon.jpg in Resources */,
+				E730564D10A922A400A3037E /* image_large.jpg in Resources */,
+				E730564E10A922A400A3037E /* PriSS.png in Resources */,
+				E730564F10A922A400A3037E /* terms.sqlite in Resources */,
+				E73A7D5A11057419001FBDB7 /* Entitlements.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -224,7 +244,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = iBigText_Prefix.pch;
 				INFOPLIST_FILE = "iBigText-Info.plist";
-				PRODUCT_NAME = iBigText;
+				PRODUCT_NAME = BigText;
 			};
 			name = Release;
 		};
@@ -232,11 +252,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Thomas Rudick (7CB7636797)";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				PREBINDING = NO;
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "8EBCEF5C-2C78-4ADB-9329-E9D39C63C91E";
 				SDKROOT = iphoneos3.1.2;
 			};
 			name = Debug;
@@ -245,11 +266,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_ENTITLEMENTS = Entitlements.plist;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Thomas Rudick";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				PREBINDING = NO;
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "A2F19297-4F79-42D6-A796-7ADFB24C2754";
 				SDKROOT = iphoneos3.1.2;
 			};
 			name = Release;
