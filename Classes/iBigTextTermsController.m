@@ -17,17 +17,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 	
-	context = [(iBigTextAppDelegate *)[[UIApplication sharedApplication] delegate] managedObjectContext];
-	
-	NSFetchRequest *request = [[NSFetchRequest alloc] init];
-	NSEntityDescription *entity = [NSEntityDescription entityForName:@"Term" inManagedObjectContext:context];
-	[request setEntity:entity];
-	
-	NSError *error;
-	terms = [[context executeFetchRequest:request error:&error] mutableCopy];
-	
-	[termTableView reloadData];
-	[request release];
+	dbService = [[DatabaseService alloc] init];
+	terms = [[NSMutableArray alloc] initWithArray:[dbService loadTerms]];
 }
 
 // Override to allow orientations other than the default portrait orientation.
@@ -40,23 +31,16 @@
 }
 
 - (void)dealloc {
-	[terms release];
+	[dbService release];
     [super dealloc];
 }
 
 -(IBAction)save {
-	if ([terms indexOfObject:[delegate getBigText]] != NSNotFound)
-		return;
+	[dbService addTerm:[delegate getBigText]];
+	[terms addObject:[delegate getBigText]];
+	[termTableView reloadData];
 	
-	Term *term = (Term *)[NSEntityDescription insertNewObjectForEntityForName:@"Term" inManagedObjectContext:context];
-
-	[term setTitle:[delegate getBigText]];
-	NSError *error;
-	if (![context save:&error]) {
-		NSLog(@"Error Saving New Term");
-	}
-	[terms addObject:term];
-	[delegate updateBigText:[delegate getBigText]];
+	// [delegate updateBigText:[delegate getBigText]];
 }
 
 -(IBAction)done {
@@ -76,14 +60,14 @@
 	}
 	
 	// Set up the cell...
-	NSString *cellValue = [[terms objectAtIndex:indexPath.row] title];
+	NSString *cellValue = [terms objectAtIndex:indexPath.row];
 	[cell.textLabel setText:cellValue];
 	
 	return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-	[delegate updateBigText:[[terms objectAtIndex:indexPath.row] title]];
+	[delegate updateBigText:[terms objectAtIndex:indexPath.row]];
 }
 
 -(void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -91,18 +75,9 @@
 	if (editingStyle == UITableViewCellEditingStyleDelete)
 	{		
 		// Delete the managed object at the given index path.
-        NSManagedObject* term = [terms objectAtIndex:indexPath.row];
-        [context deleteObject:term];
-		
-        // Update the array and table view.
-        [terms removeObjectAtIndex:indexPath.row];
-        [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:YES];
-		
-        // Commit the change.
-        NSError *error;
-        if (![context save:&error]) {
-			NSLog(@"Error Saving Term.");
-        }
+		[dbService deleteTerm:[terms objectAtIndex:indexPath.row]];
+		[terms removeObjectAtIndex:indexPath.row];
+		[tableView reloadData];
 	}
 }
 

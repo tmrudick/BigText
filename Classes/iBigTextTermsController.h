@@ -9,20 +9,20 @@
 #import <UIKit/UIKit.h>
 #import "Term.h"
 #import "iBigTextAppDelegate.h"
+#import "DatabaseService.h"
 
 @protocol iBigTextSettingsDelegate;
 
 @interface iBigTextTermsController : UIViewController {
 	id <iBigTextSettingsDelegate> delegate;
 	IBOutlet UITableView* termTableView;
-	
+
+	DatabaseService *dbService;
 	NSMutableArray* terms;
-	NSManagedObjectContext* context;
 }
 @property(nonatomic, assign) id <iBigTextSettingsDelegate> delegate;
 -(IBAction)save;
 -(IBAction)done;
-
 @end
 
 @protocol iBigTextSettingsDelegate

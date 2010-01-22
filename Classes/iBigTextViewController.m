@@ -27,9 +27,9 @@
 
 -(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent*)event {	
 	UITouch *touch = [[event allTouches] anyObject];
-	if (touch.tapCount == 2) {
-		//[self showSettings];
-		//return;
+	if (touch.tapCount == 1) {
+		[self showSettings];
+		return;
 	}
 	
 	NSSet *allTouches = [event allTouches];
