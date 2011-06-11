@@ -46,7 +46,7 @@ namespace WP7BigText
             }
         }
 
-        private void BigTextBox_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        private void BigTextBlock_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             HiddenTextBox.Text = string.Empty; // Clear the last BigText entry
             HiddenTextBox.Focus(); // Force the keyboard to be shown
@@ -61,23 +61,23 @@ namespace WP7BigText
             }
 
             // Set the text
-            BigTextBox.Text = text;
+            BigTextBlock.Text = text;
 
             // Set the size to zero and updat the layout
             // This is to reset the box
-            BigTextBox.FontSize = 0;
-            BigTextBox.UpdateLayout();
+            BigTextBlock.FontSize = 0;
+            BigTextBlock.UpdateLayout();
 
             // Loop and keep updating the font size until we find the biggest size that fits
-            while (BigTextBox.RenderSize.Width <= maxWidth && BigTextBox.RenderSize.Height <= maxHeight)
+            while (BigTextBlock.RenderSize.Width <= maxWidth && BigTextBlock.RenderSize.Height <= maxHeight)
             {
-                BigTextBox.FontSize += 1;
-                BigTextBox.UpdateLayout(); //Need this otherwise RenderSize doesn't change
+                BigTextBlock.FontSize += 1;
+                BigTextBlock.UpdateLayout(); //Need this otherwise RenderSize doesn't change
             }
 
             // We are bigger than our display to kick it down a notch
-            BigTextBox.FontSize -= 1;
-            BigTextBox.UpdateLayout();
+            BigTextBlock.FontSize -= 1;
+            BigTextBlock.UpdateLayout();
         }
     }
 }
