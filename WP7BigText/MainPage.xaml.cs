@@ -39,6 +39,11 @@ namespace WP7BigText
 
         private void SetText(string text)
         {
+            if (text.Trim() == string.Empty)
+            {
+                return;
+            }
+
             // Set the text
             bigTextBox.Text = text;
 
