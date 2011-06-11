@@ -17,6 +17,7 @@ namespace WP7BigText
     {
         private int maxWidth, maxHeight;
         private const int BIGTEXT_PADDING = 20;
+        private const int FONT_PRECISION = 20;
 
         #region Setup
         // Constructor
@@ -57,9 +58,15 @@ namespace WP7BigText
 
         private void SetText(string text)
         {
-            if (text.Trim() == string.Empty)
+            text = text.Trim();
+
+            if (text == string.Empty)
             {
                 text = "BigText";
+            }
+            else if (text == BigTextBlock.Text)
+            {
+                return;
             }
 
             // Set the text
@@ -67,18 +74,18 @@ namespace WP7BigText
 
             // Set the size to zero and updat the layout
             // This is to reset the box
-            BigTextBlock.FontSize = 0;
+            BigTextBlock.FontSize = 20;
             BigTextBlock.UpdateLayout();
 
             // Loop and keep updating the font size until we find the biggest size that fits
             while (BigTextBlock.RenderSize.Width <= maxWidth && BigTextBlock.RenderSize.Height <= maxHeight)
             {
-                BigTextBlock.FontSize += 1;
+                BigTextBlock.FontSize += FONT_PRECISION;
                 BigTextBlock.UpdateLayout(); //Need this otherwise RenderSize doesn't change
             }
 
             // We are bigger than our display to kick it down a notch
-            BigTextBlock.FontSize -= 1;
+            BigTextBlock.FontSize -= FONT_PRECISION;
             BigTextBlock.UpdateLayout();
         }
     }
