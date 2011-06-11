@@ -29,6 +29,8 @@ namespace WP7BigText
         {
             maxWidth = (int)App.Current.RootVisual.RenderSize.Height - (BIGTEXT_PADDING * 2);
             maxHeight = (int)App.Current.RootVisual.RenderSize.Width - (BIGTEXT_PADDING * 2);
+
+            SetText("BigText");
         }
         #endregion
 
@@ -44,8 +46,7 @@ namespace WP7BigText
             {
                 this.Focus();
             }
-
-            if (HiddenTextBox.Text.Trim() == string.Empty)
+            else if (e.Key == Key.Back && HiddenTextBox.Text.Length <= 1)
             {
                 SetText("BigText");
             }
