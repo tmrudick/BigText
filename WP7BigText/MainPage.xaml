@@ -10,12 +10,16 @@
     FontFamily="{StaticResource PhoneFontFamilyNormal}"
     FontSize="{StaticResource PhoneFontSizeNormal}"
     Foreground="{StaticResource PhoneForegroundBrush}"
-    SupportedOrientations="Portrait" Orientation="Landscape"
-    shell:SystemTray.IsVisible="True">
+    SupportedOrientations="Landscape" Orientation="Landscape"
+    shell:SystemTray.IsVisible="True" Loaded="PhoneApplicationPage_Loaded">
 
     <!--LayoutRoot is the root grid where all page content is placed-->
     <Grid x:Name="LayoutRoot" Background="Transparent">
-        <TextBlock Height="480" HorizontalAlignment="Left" Name="textBlock1" Text="BigText" VerticalAlignment="Top" Width="728" TextAlignment="Center" FontFamily="Georgia" />
+        <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
+            <TextBlock x:Name="bigTextBox" Text="BigText" TextAlignment="Center" FontSize="200" MouseLeftButtonDown="bigTextBox_MouseLeftButtonDown_1" FontFamily="Georgia" TextWrapping="Wrap" />
+        </Grid>
+
+        <TextBox Height="72" HorizontalAlignment="Left" Margin="148,0,0,0" Name="hiddenTextBox" Text="" VerticalAlignment="Top" Width="460" Visibility="Visible" TextChanged="hiddenTextBox_TextChanged" KeyDown="hiddenTextBox_KeyDown" Opacity="0" />
     </Grid>
  
     <!--Sample code showing usage of ApplicationBar-->
