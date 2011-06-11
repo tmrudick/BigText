@@ -46,10 +46,6 @@ namespace WP7BigText
             {
                 this.Focus();
             }
-            else if (e.Key == Key.Back && HiddenTextBox.Text.Length <= 1)
-            {
-                SetText("BigText");
-            }
         }
 
         private void BigTextBlock_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
@@ -63,7 +59,7 @@ namespace WP7BigText
         {
             if (text.Trim() == string.Empty)
             {
-                return;
+                text = "BigText";
             }
 
             // Set the text
