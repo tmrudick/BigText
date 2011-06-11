@@ -23,6 +23,6 @@
             <TextBlock x:Name="BigTextBlock" Text="BigText" TextAlignment="Center" FontSize="200" FontFamily="Georgia" TextWrapping="Wrap" MouseLeftButtonDown="BigTextBlock_MouseLeftButtonDown" Foreground="{StaticResource BigTextColor}" />
         </Grid>
 
-        <TextBox Height="72" HorizontalAlignment="Left" Margin="148,0,0,0" Name="HiddenTextBox" Text="" VerticalAlignment="Top" Width="460" Visibility="Visible" Opacity="0" TextChanged="HiddenTextBox_TextChanged" KeyDown="HiddenTextBox_KeyDown" />
+        <TextBox Height="72" HorizontalAlignment="Left" Margin="139,-134,0,0" Name="HiddenTextBox" Text="" VerticalAlignment="Top" Width="460" Visibility="Visible" Opacity="0" TextChanged="HiddenTextBox_TextChanged" KeyDown="HiddenTextBox_KeyDown" />
     </Grid>
 </phone:PhoneApplicationPage>
