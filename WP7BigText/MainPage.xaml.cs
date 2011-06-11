@@ -18,6 +18,7 @@ namespace WP7BigText
         private int maxWidth, maxHeight;
         private const int BIGTEXT_PADDING = 20;
         private const int FONT_PRECISION = 20;
+        private bool editing = false;
 
         #region Setup
         // Constructor
@@ -45,16 +46,36 @@ namespace WP7BigText
         {
             if (e.Key == Key.Enter)
             {
-                this.Focus();
+                StopEditing();
             }
         }
 
         private void BigTextBlock_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-            HiddenTextBox.Text = string.Empty; // Clear the last BigText entry
-            HiddenTextBox.Focus(); // Force the keyboard to be shown
+            if (editing == false)
+            {
+                editing = true;
+                // Clear the last BigText entry
+                HiddenTextBox.Text = string.Empty;
+                SetText("");
+                HiddenTextBox.Focus(); // Force the keyboard to be shown
+            }
+            else
+            {
+                StopEditing();
+            }
         }
         #endregion
+
+        private void StopEditing()
+        {
+            if (HiddenTextBox.Text.Trim() == string.Empty)
+            {
+                SetText("BigText");
+            }
+            editing = false;
+            this.Focus();
+        }
 
         private void SetText(string text)
         {
@@ -62,7 +83,9 @@ namespace WP7BigText
 
             if (text == string.Empty)
             {
-                text = "BigText";
+                // Just set empty string and get-out!
+                BigTextBlock.Text = "";
+                return;
             }
             else if (text == BigTextBlock.Text)
             {
