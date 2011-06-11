@@ -16,10 +16,10 @@
     <!--LayoutRoot is the root grid where all page content is placed-->
     <Grid x:Name="LayoutRoot" Background="Transparent">
         <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
-            <TextBlock x:Name="bigTextBox" Text="BigText" TextAlignment="Center" FontSize="200" MouseLeftButtonDown="bigTextBox_MouseLeftButtonDown_1" FontFamily="Georgia" TextWrapping="Wrap" />
+            <TextBlock x:Name="BigTextBox" Text="BigText" TextAlignment="Center" FontSize="200" FontFamily="Georgia" TextWrapping="Wrap" MouseLeftButtonDown="BigTextBox_MouseLeftButtonDown" />
         </Grid>
 
-        <TextBox Height="72" HorizontalAlignment="Left" Margin="148,0,0,0" Name="hiddenTextBox" Text="" VerticalAlignment="Top" Width="460" Visibility="Visible" TextChanged="hiddenTextBox_TextChanged" KeyDown="hiddenTextBox_KeyDown" Opacity="0" />
+        <TextBox Height="72" HorizontalAlignment="Left" Margin="148,0,0,0" Name="HiddenTextBox" Text="" VerticalAlignment="Top" Width="460" Visibility="Visible" Opacity="0" TextChanged="HiddenTextBox_TextChanged" KeyDown="HiddenTextBox_KeyDown" />
     </Grid>
  
     <!--Sample code showing usage of ApplicationBar-->
