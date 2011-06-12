@@ -1,4 +1,5 @@
-syntax: glob
-
 build
-iBigText.xcodeproj/paco36.*
+bin
+obj
+Bin
+Obj

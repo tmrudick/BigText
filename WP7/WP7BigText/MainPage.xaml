@@ -1,0 +1,28 @@
+﻿<phone:PhoneApplicationPage 
+    x:Class="WP7BigText.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="480"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Landscape" Orientation="Landscape"
+    shell:SystemTray.IsVisible="False" Loaded="PhoneApplicationPage_Loaded">
+
+    <phone:PhoneApplicationPage.Resources>
+        <SolidColorBrush Color="#444" x:Key="BigTextColor" />
+        <SolidColorBrush Color="#AAABA5" x:Key="BigTextBackgroundColor" />
+    </phone:PhoneApplicationPage.Resources>
+
+    <Grid x:Name="LayoutRoot" Background="{StaticResource BigTextBackgroundColor}">
+        <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
+            <TextBlock x:Name="BigTextBlock" Text="BigText" TextAlignment="Center" FontSize="200" FontFamily="Georgia" TextWrapping="Wrap" MouseLeftButtonDown="BigTextBlock_MouseLeftButtonDown" Foreground="{StaticResource BigTextColor}" />
+        </Grid>
+
+        <TextBox Height="72" HorizontalAlignment="Left" Margin="139,-134,0,0" Name="HiddenTextBox" Text="" VerticalAlignment="Top" Width="460" Visibility="Visible" Opacity="0" TextChanged="HiddenTextBox_TextChanged" KeyDown="HiddenTextBox_KeyDown" />
+    </Grid>
+</phone:PhoneApplicationPage>
