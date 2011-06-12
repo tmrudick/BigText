@@ -7,7 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "Term.h"
 #import "iBigTextAppDelegate.h"
 #import "DatabaseService.h"
 

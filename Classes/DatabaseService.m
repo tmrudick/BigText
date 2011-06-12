@@ -57,7 +57,7 @@
 	// Copy the database from the package to the users filesystem
 	[fileManager copyItemAtPath:databasePathFromApp toPath:databasePath error:nil];
     
-	[fileManager release];
+	//[fileManager release];
 }
 
 - (NSArray*)loadTerms {

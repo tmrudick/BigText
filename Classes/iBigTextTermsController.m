@@ -18,7 +18,9 @@
     [super viewDidLoad];
 	
 	dbService = [[DatabaseService alloc] init];
-	terms = [[NSMutableArray alloc] initWithArray:[dbService loadTerms]];
+	NSArray* t_array = [dbService loadTerms];
+	terms = [[NSMutableArray alloc] initWithArray:t_array];
+	[t_array release];
 }
 
 // Override to allow orientations other than the default portrait orientation.
@@ -32,15 +34,16 @@
 
 - (void)dealloc {
 	[dbService release];
+	[terms release];
     [super dealloc];
 }
 
 -(IBAction)save {
-	[dbService addTerm:[delegate getBigText]];
-	[terms addObject:[delegate getBigText]];
-	[termTableView reloadData];
-	
-	// [delegate updateBigText:[delegate getBigText]];
+	if (![terms containsObject:[delegate getBigText]]) {
+		[dbService addTerm:[delegate getBigText]];
+		[terms addObject:[delegate getBigText]];
+		[termTableView reloadData];
+	}
 }
 
 -(IBAction)done {

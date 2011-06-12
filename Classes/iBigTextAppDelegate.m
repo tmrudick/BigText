@@ -8,7 +8,6 @@
 
 #import "iBigTextAppDelegate.h"
 #import "iBigTextViewController.h"
-#import "Term.h"
 
 @interface iBigTextAppDelegate (Private)
 - (void)createEditableCopyOfDatabaseIfNeeded;

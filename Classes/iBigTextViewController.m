@@ -27,14 +27,14 @@
 
 -(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent*)event {	
 	UITouch *touch = [[event allTouches] anyObject];
-	if (touch.tapCount == 1) {
+	if (touch.tapCount == 2) {
 		[self showSettings];
 		return;
 	}
 	
 	NSSet *allTouches = [event allTouches];
     if ([allTouches count] == 2) {
-		//[self showSettings];
+		[self showSettings];
 	}else{
 		textField.hidden = NO;
 		bigTextLabel.hidden = YES;
