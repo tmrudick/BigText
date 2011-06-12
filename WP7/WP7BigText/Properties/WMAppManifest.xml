@@ -4,6 +4,15 @@
   <App xmlns="" ProductID="{960b7a0c-7ffa-47b0-8814-049107f3ed07}" Title="BigText" RuntimeType="Silverlight" Version="1.0.0.0" Genre="apps.normal"  Author="Tom Rudick" Description="Display BigText on your WP7." Publisher="Tom Rudick">
     <IconPath IsRelative="true" IsResource="false">ApplicationIcon.png</IconPath>
     <Capabilities>
+      <Capability Name="ID_CAP_NETWORKING" />
+      <Capability Name="ID_CAP_LOCATION" />
+      <Capability Name="ID_CAP_SENSORS" />
+      <Capability Name="ID_CAP_MICROPHONE" />
+      <Capability Name="ID_CAP_MEDIALIB" />
+      <Capability Name="ID_CAP_GAMERSERVICES" />
+      <Capability Name="ID_CAP_PHONEDIALER" />
+      <Capability Name="ID_CAP_PUSH_NOTIFICATION" />
+      <Capability Name="ID_CAP_WEBBROWSERCOMPONENT" />
     </Capabilities>
     <Tasks>
       <DefaultTask  Name ="_default" NavigationPage="MainPage.xaml"/>
